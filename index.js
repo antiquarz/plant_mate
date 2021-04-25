@@ -1,24 +1,21 @@
 const express = require('express')
 const mongodb = require('mongodb')
-const bodyParser = require('body-parser');
 const MongoClient = mongodb.MongoClient;
+import 'dotenv/config';
 
 const app = express();
 const port = 3000
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: false}));
 
 app.get('/', (req, res) => {
   console.log(req.body);
 
   return res.send(req.body);
-
   return res.send('Received a GET HTTP method');
 });
 
 app.post('/sensor_data', (req, res) => {
-  console.log(req.body);
-
   saveSensorData(req.body);
   return res.send(req.body);
 });
