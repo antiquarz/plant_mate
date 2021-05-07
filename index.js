@@ -7,7 +7,7 @@ const MongoClient = mongodb.MongoClient;
 const app = express();
 const port = 3000;
 // const url = 'mongodb://localhost:27017/plant_mate';
-const url = 'mongodb://165.22.82.241:4321/plant_mate';
+const url = 'mongodb://165.22.82.241:27017/plant_mate';
 
 
 app.use(express.urlencoded({ extended: false }));
